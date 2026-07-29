@@ -71,12 +71,9 @@ hr {
 </div>
 
 <script>
-const repoOwner = "failed555-tech";
-const repoName = "DGS5json";
-
 const collectionsDiv = document.getElementById("collections");
 
-function createCategory(categoryName, games){
+function createCategory(categoryName, games) {
 
     const section = document.createElement("div");
 
@@ -85,20 +82,20 @@ function createCategory(categoryName, games){
         <hr>
     `;
 
-    games.forEach(game=>{
+    games.forEach(game => {
 
-        const button=document.createElement("button");
+        const button = document.createElement("button");
+        button.textContent = game.title;
 
-        button.textContent=game.title;
+        button.onclick = () => {
 
-        button.onclick=()=>{
-
-            const safePath=game.file
+            const safePath = game.file
                 .split("/")
-                .map(part=>encodeURIComponent(part))
+                .map(part => encodeURIComponent(part))
                 .join("/");
 
-            window.location.href=`https://${repoOwner}.github.io/${repoName}/${safePath}`;
+            // Opens relative to your current GitHub Pages site
+            window.location.href = "./" + safePath;
 
         };
 
@@ -110,43 +107,57 @@ function createCategory(categoryName, games){
 
 }
 
-async function loadGames(){
+async function loadGames() {
 
-    try{
+    try {
 
-        const response=await fetch("games.json");
+        const response = await fetch("games.json");
 
-        if(!response.ok)
+        if (!response.ok)
             throw new Error("Couldn't load games.json");
 
-        const games=await response.json();
+        const data = await response.json();
 
-        collectionsDiv.innerHTML="";
+        const games = data.games;
+        const categoryOrder = data.categories;
 
-        const categories={};
+        collectionsDiv.innerHTML = "";
 
-        games.forEach(game=>{
+        // Group games by category
+        const categories = {};
 
-            if(!categories[game.category])
-                categories[game.category]=[];
+        games.forEach(game => {
+
+            if (!categories[game.category])
+                categories[game.category] = [];
 
             categories[game.category].push(game);
 
         });
 
-        Object.keys(categories)
-            .sort()
-            .forEach(category=>{
+        // Show categories in the order listed in games.json
+        categoryOrder.forEach(category => {
 
-                createCategory(category,categories[category]);
+            if (categories[category]) {
+                createCategory(category, categories[category]);
+            }
 
-            });
+        });
+
+        // Show any categories not listed in categoryOrder
+        Object.keys(categories).forEach(category => {
+
+            if (!categoryOrder.includes(category)) {
+                createCategory(category, categories[category]);
+            }
+
+        });
 
     }
-    catch(err){
+    catch (err) {
 
         console.error(err);
-        collectionsDiv.innerHTML="<h3>Failed to load games.json</h3>";
+        collectionsDiv.innerHTML = "<h3>Failed to load games.json</h3>";
 
     }
 
