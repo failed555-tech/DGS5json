@@ -1,6 +1,7 @@
 {
   "categories": [
     "Featured",
+    "DGS INFORMATION",
     "DOOM",
     "Pokemon",
     "Mario",
@@ -11,12 +12,17 @@
     {
       "file": "DGS/test.html",
       "title": "OFM TEST",
-      "category": "Featured"
+      "category": "DGS INFORMATION"
     },
     {
       "file": "doom/doom1.html",
       "title": "DOOM",
       "category": "DOOM"
+    },
+    {
+      "file": "doom/doom1.html",
+      "title": "jack conquden",
+      "category": "Featured"
     },
     {
       "file": "pokemon/red.html",
