@@ -2,7 +2,7 @@
   "categories": [
     "Featured",
     "DGS INFORMATION",
-    "DOOM",
+    "Arcade Games",
     "Pokemon",
     "Mario",
     "Zelda"
@@ -15,10 +15,40 @@
       "category": "DGS INFORMATION"
     },
     {
-      "file": "doom/doom1.html",
-      "title": "DOOM",
-      "category": "DOOM"
+      "file": "GAMES/Arcade Games/Breakout 1976.html",
+      "title": "Breakout 1976",
+      "category": "Arcade Games"
     },
+     {
+      "file": "GAMES/Arcade Games/Frogger.html",
+      "title": "Frogger",
+      "category": "Arcade Games"
+    }
+     {
+      "file": "GAMES/Arcade Games/Ms Pacman.html",
+      "title": "Ms Pacman",
+      "category": "Arcade Games"
+    }
+    {
+      "file": "GAMES/Arcade Games/PacMan Classic.html",
+      "title": "Pacman Classic",
+      "category": "Arcade Games"
+    }
+    {
+      "file": "GAMES/Arcade Games/Pool Shark.html",
+      "title": "Pool Shark",
+      "category": "Arcade Games"
+    }
+    {
+      "file": "GAMES/Arcade Games/Retro Racer.html",
+      "title": "Retro Racer",
+      "category": "Arcade Games"
+    }
+     {
+      "file": "GAMES/Arcade Games/Space invaders.html",
+      "title": "Space Invaders",
+      "category": "Arcade Games"
+    }
     {
       "file": "doom/doom1.html",
       "title": "jack conquden",
