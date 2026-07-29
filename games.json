@@ -1,0 +1,27 @@
+[
+    {
+        "file": "doom/doom1.html",
+        "title": "DOOM",
+        "category": "DOOM"
+    },
+    {
+        "file": "doom/doom2.html",
+        "title": "DOOM II",
+        "category": "DOOM"
+    },
+    {
+        "file": "pokemon/red.html",
+        "title": "Pokemon Red",
+        "category": "Pokemon"
+    },
+    {
+        "file": "pokemon/blue.html",
+        "title": "Pokemon Blue",
+        "category": "Pokemon"
+    },
+    {
+        "file": "mario/mario64.html",
+        "title": "Super Mario 64",
+        "category": "Mario"
+    }
+]
